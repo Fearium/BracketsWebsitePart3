@@ -1,0 +1,102 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/navbar.ejs %>
+        <main class="container">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <h1>Create a Team</h1>
+                    <form method="post">
+                        <fieldset class="form-group">
+                            <label for="name">Tournament Name: *</label>
+                            <input type="text" name="name" class="form-control" required />
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label for="size">Tournament Size: *</label>
+                            <label class="radio-inline">
+                                <input type="radio" name="size" id="size8" value="8"> 8
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="size" id="size16" value="16"> 16
+                            </label>
+                        </fieldset>
+
+                        <!-- teams ARRAY -->
+                        <fieldset class="form-group">
+                            <label for="teams1">1st Team Member Name: *</label>
+                            <input type="text" name="teams1" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams2">2nd Team Member Name: *</label>
+                            <input type="text" name="teams2" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams3">3rd Team Member Name: *</label>
+                            <input type="text" name="teams3" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams4">4th Team Member Name: *</label>
+                            <input type="text" name="teams4" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams5">5th Team Member Name: *</label>
+                            <input type="text" name="teams5" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams6">6th Team Member Name: *</label>
+                            <input type="text" name="teams6" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams7">7th Team Member Name: *</label>
+                            <input type="text" name="teams7" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams8">8th Team Member Name: *</label>
+                            <input type="text" name="teams8" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams9">9th Team Member Name: *</label>
+                            <input type="text" name="teams9" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teamss10">10th Team Member Name: *</label>
+                            <input type="text" name="teams10" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams11">11th Team Member Name: *</label>
+                            <input type="text" name="teams11" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams12">12th Team Member Name: *</label>
+                            <input type="text" name="teams12" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams13">13th Team Member Name: *</label>
+                            <input type="text" name="teams13" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams14">14th Team Member Name: *</label>
+                            <input type="text" name="teams14" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams15">15th Team Member Name: *</label>
+                            <input type="text" name="teams15" class="form-control" required />
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="teams16">16th Team Member Name: *</label>
+                            <input type="text" name="teams16" class="form-control" required />
+                        </fieldset>
+
+
+                        <fieldset class="form-group text-right">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                            <a href="/tournaments">
+                                <input type="button" class="btn btn-warning" value="Cancel" />
+                            </a>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+<% include ../partials/bootstrap.ejs %>
+<% include ../partials/footer.ejs %>
