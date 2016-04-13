@@ -21,6 +21,7 @@ var CustomError = objects.CustomError;
 var myerror = new CustomError();
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var teams = require('./routes/teams');
 var articles = require('./routes/articles');
 var todos = require('./routes/todos');
 var app = express();
@@ -52,6 +53,7 @@ passport.deserializeUser(User.deserializeUser());
 // Route Definitions
 app.use('/', routes);
 app.use('/users', users);
+app.use('/teams', teams);
 app.use('/articles', articles);
 app.use('/todos', todos);
 // connect to mongodb with mongoose
