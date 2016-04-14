@@ -29,8 +29,9 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
         else {
             // no error, we found a list of users
             res.render('tournaments/index', {
-                title: 'Tournaments',
-                tournaments: tournaments
+                title: 'My Tournaments',
+                tournaments: tournaments,
+                userName: req.user ? req.user.username : ''
             });
         }
     });
@@ -39,7 +40,8 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
 // GET add page - show the blank form
 router.get('/add', requireAuth, (req: express.Request, res: express.Response, next: any) => {
     res.render('tournaments/add', {
-        title: 'Add a New Tournament'
+        title: 'Add a New Tournament',
+        userName: req.user ? req.user.username : ''
     });
 });
 
@@ -49,7 +51,7 @@ router.post('/add', requireAuth, (req: express.Request, res: express.Response, n
         name: req.body.name,
         size: req.body.size,
         team: req.body.team
-    }, (error, Tournament) => {
+    }, (error, tournament) => {
         // did we get back an error or valid Users object?
         if (error) {
             console.log(error);
@@ -75,7 +77,8 @@ router.get('/:id', requireAuth, (req: express.Request, res: express.Response, ne
             //show the edit view
             res.render('tournaments/edit', {
                 title: 'Tournament Details',
-                tournament: Tournament
+                tournament: Tournament,
+                userName: req.user ? req.user.userName : ''
             });
         }
     });

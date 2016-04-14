@@ -58,4 +58,5 @@ teamSchema.plugin(passportLocalMongoose);
 // MAKE THIS PUBLIC SO THE CONTROLLER CAN SEE IT
 exports.Team = mongoose.model('Team', teamSchema);
 //# sourceMappingURL=team.js.map
+
 //# sourceMappingURL=team.js.map

@@ -22,8 +22,9 @@ router.get('/', requireAuth, function (req, res, next) {
         else {
             // no error, we found a list of users
             res.render('tournaments/index', {
-                title: 'Tournaments',
-                tournaments: tournaments
+                title: 'My Tournaments',
+                tournaments: tournaments,
+                userName: req.user ? req.user.username : ''
             });
         }
     });
@@ -31,7 +32,8 @@ router.get('/', requireAuth, function (req, res, next) {
 // GET add page - show the blank form
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('tournaments/add', {
-        title: 'Add a New Tournament'
+        title: 'Add a New Tournament',
+        userName: req.user ? req.user.username : ''
     });
 });
 // POST add page - save the new user
@@ -40,7 +42,7 @@ router.post('/add', requireAuth, function (req, res, next) {
         name: req.body.name,
         size: req.body.size,
         team: req.body.team
-    }, function (error, Tournament) {
+    }, function (error, tournament) {
         // did we get back an error or valid Users object?
         if (error) {
             console.log(error);
@@ -63,7 +65,8 @@ router.get('/:id', requireAuth, function (req, res, next) {
             //show the edit view
             res.render('tournaments/edit', {
                 title: 'Tournament Details',
-                tournament: Tournament
+                tournament: Tournament,
+                userName: req.user ? req.user.userName : ''
             });
         }
     });
@@ -109,4 +112,5 @@ router.get('/delete/:id', requireAuth, function (req, res, next) {
 });
 // make this public
 module.exports = router;
+
 //# sourceMappingURL=tournaments.js.map

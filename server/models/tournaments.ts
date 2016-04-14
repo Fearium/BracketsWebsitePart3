@@ -20,6 +20,10 @@ var tournamentSchema = new mongoose.Schema({
         trim: true,
         required: 'Teams are required'
     },
+     description: {
+        type: String,
+        trim: true,
+    },
     createdby: {
         type: String,
         trim: true,

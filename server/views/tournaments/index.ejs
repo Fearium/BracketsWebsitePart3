@@ -1,25 +1,25 @@
 <% include ../partials/header.ejs %>
 <% include ../partials/navbar.ejs %>
 <main class="container">
-    <h1>Users</h1>
+    <h1>Tournaments</h1>
 
-    <a href="/users/add">Add a New User</a>
+    <a href="/tournaments/add">Add a New Tournament</a>
 
     <ul class="list-group">
-        <% for (var i = 0; i < users.length; i++) { %>
+        <% for (var i = 0; i < tournaments.Length; i++) { %>
             <li class="list-group-item">
-                username: 
-                <a href="/users/<%= users[i]._id %>" title="Edit User">
-                    <%= users[i].username %>
+                Name: 
+                <a href="/tournaments/<%= tournaments[i]._id %>" title="Edit Tournament">
+                    <%= tournaments[i].name %>
                 </a>
                 <br />
-                password: <%= users[i].password %>
+                size: <%= tournaments[i].size %>
                 <br />
-                email: <%= users[i].email %>
+                description: <%= tournaments[i].description %>
                 <br />
-                Created: <%= users[i].created.toDateString() %>
+                Created: <%= tournaments[i].created.toDateString() %>
                 <br />
-                Updated: <%= users[i].updated.toDateString() %>
+                Updated: <%= tournaments[i].updated.toDateString() %>
             </li>
         <% } %>
     </ul>
