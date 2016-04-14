@@ -21,8 +21,8 @@ var CustomError = objects.CustomError;
 var myerror = new CustomError();
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var articles = require('./routes/articles');
-var todos = require('./routes/todos');
+var tournaments = require('./routes/tournaments');
+//var teams = require('./routes/teams');
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -52,8 +52,8 @@ passport.deserializeUser(User.deserializeUser());
 // Route Definitions
 app.use('/', routes);
 app.use('/users', users);
-app.use('/articles', articles);
-app.use('/todos', todos);
+app.use('/tournaments', tournaments);
+//app.use('/teams', teams);
 // connect to mongodb with mongoose
 var DB = require('./config/db');
 mongoose.connect(DB.url);

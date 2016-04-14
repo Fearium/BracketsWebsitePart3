@@ -11,8 +11,11 @@ import mongoose = require('mongoose');
 
 // User
 import userModel = require('./models/user');
+//Tournament
+import tournamentModel = require('./models/tournaments');
 
 import User = userModel.User;
+import Tournament = tournamentModel.Tournament;
 
 import session = require('express-session');
 // flash messages
@@ -28,8 +31,8 @@ var myerror = new CustomError();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var articles = require('./routes/articles');
-var todos = require('./routes/todos');
+var tournaments = require('./routes/tournaments');
+//var teams = require('./routes/teams');
 
 var app = express();
 
@@ -67,8 +70,8 @@ passport.deserializeUser(User.deserializeUser());
 // Route Definitions
 app.use('/', routes);
 app.use('/users', users);
-app.use('/articles', articles);
-app.use('/todos', todos);
+app.use('/tournaments', tournaments);
+//app.use('/teams', teams);
 
 // connect to mongodb with mongoose
 var DB = require('./config/db');
