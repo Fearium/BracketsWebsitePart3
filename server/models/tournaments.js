@@ -19,6 +19,11 @@ var tournamentSchema = new mongoose.Schema({
         trim: true,
         required: 'Teams are required'
     },
+    createdby: {
+        type: String,
+        trim: true,
+        required: 'Owner required'
+    },
     created: {
         type: Date,
         default: Date.now
@@ -30,5 +35,4 @@ var tournamentSchema = new mongoose.Schema({
 }, { collection: 'tournamentInfo' });
 // MAKE THIS PUBLIC SO THE CONTROLLER CAN SEE IT
 exports.Tournament = mongoose.model('Tournament', tournamentSchema);
-
 //# sourceMappingURL=tournaments.js.map

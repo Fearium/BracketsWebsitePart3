@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var passportLocalMongoose = require('passport-local-mongoose');
 // DEFINE THE OBJECT SCHEMA
-var teamsSchema = new mongoose.Schema({
+var teamSchema = new mongoose.Schema({
     teamname: {
         type: String,
         default: '',
@@ -54,8 +54,8 @@ var teamsSchema = new mongoose.Schema({
         default: Date.now
     }
 }, { collection: 'teamInfo' });
-teamsSchema.plugin(passportLocalMongoose);
+teamSchema.plugin(passportLocalMongoose);
 // MAKE THIS PUBLIC SO THE CONTROLLER CAN SEE IT
-exports.Teams = mongoose.model('Teams', teamsSchema);
-
-//# sourceMappingURL=teams.js.map
+exports.Team = mongoose.model('Team', teamSchema);
+//# sourceMappingURL=team.js.map
+//# sourceMappingURL=team.js.map

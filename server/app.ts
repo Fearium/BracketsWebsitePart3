@@ -31,8 +31,11 @@ var myerror = new CustomError();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
 var tournaments = require('./routes/tournaments');
-//var teams = require('./routes/teams');
+
+var teams = require('./routes/teams');
+
 
 var app = express();
 
@@ -70,8 +73,11 @@ passport.deserializeUser(User.deserializeUser());
 // Route Definitions
 app.use('/', routes);
 app.use('/users', users);
+
 app.use('/tournaments', tournaments);
-//app.use('/teams', teams);
+
+app.use('/teams', teams);
+
 
 // connect to mongodb with mongoose
 var DB = require('./config/db');

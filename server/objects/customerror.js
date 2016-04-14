@@ -16,5 +16,4 @@ var objects;
     objects.CustomError = CustomError;
 })(objects || (objects = {}));
 module.exports = objects;
-
 //# sourceMappingURL=customerror.js.map

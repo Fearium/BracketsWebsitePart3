@@ -34,5 +34,4 @@ var options = ({ missingPasswordError: "Wrong password" });
 userSchema.plugin(passportLocalMongoose, options);
 // MAKE THIS PUBLIC SO THE CONTROLLER CAN SEE IT
 exports.User = mongoose.model('User', userSchema);
-
 //# sourceMappingURL=user.js.map

@@ -162,5 +162,4 @@ router.get('/logout', function (req, res) {
     res.redirect('/login');
 });
 module.exports = router;
-
 //# sourceMappingURL=index.js.map
