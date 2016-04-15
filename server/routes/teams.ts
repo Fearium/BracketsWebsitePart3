@@ -39,9 +39,15 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
 
 // GET add page - show the blank form
 router.get('/add', requireAuth, (req: express.Request, res: express.Response, next: any) => {
+<<<<<<< HEAD
            
             res.render('teams/add', {
                 title: 'Add a New Team',
+=======
+   // no error, we found a list of teams
+            res.render('teams/add', {
+                title: 'Add a Team',
+>>>>>>> 066b1f58f3044ae97bcc9bebb271ea657f296b6f
                 userName: req.user ? req.user.userName : ''
             });
 });
