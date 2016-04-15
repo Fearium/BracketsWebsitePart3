@@ -40,8 +40,25 @@ router.get('/add', requireAuth, function (req, res, next) {
 router.post('/add', requireAuth, function (req, res, next) {
     Tournament.create({
         name: req.body.name,
+        description: req.body.description,
         size: req.body.size,
-        team: Tournament.collection['TournamentInfo'].insert(req.body.team)
+        team1: req.body.team1,
+        team2: req.body.team2,
+        team3: req.body.team3,
+        team4: req.body.team4,
+        team5: req.body.team5,
+        team6: req.body.team6,
+        team7: req.body.team7,
+        team8: req.body.team8,
+        team9: req.body.team9,
+        team10: req.body.team10,
+        team11: req.body.team11,
+        team12: req.body.team12,
+        team13: req.body.team13,
+        team14: req.body.team14,
+        team15: req.body.team15,
+        team16: req.body.team16,
+        createdby: req.user.username
     }, function (error, tournament) {
         // did we get back an error or valid Users object?
         if (error) {
@@ -79,8 +96,24 @@ router.post('/:id', requireAuth, function (req, res, next) {
     var tournament = new Tournament({
         _id: id,
         name: req.body.name,
+        description: req.body.description,
         size: req.body.size,
-        team: req.body.team
+        team1: req.body.team1,
+        team2: req.body.team2,
+        team3: req.body.team3,
+        team4: req.body.team4,
+        team5: req.body.team5,
+        team6: req.body.team6,
+        team7: req.body.team7,
+        team8: req.body.team8,
+        team9: req.body.team9,
+        team10: req.body.team10,
+        team11: req.body.team11,
+        team12: req.body.team12,
+        team13: req.body.team13,
+        team14: req.body.team14,
+        team15: req.body.team15,
+        team16: req.body.team16
     });
     // run the update using mongoose and our model
     Tournament.update({ _id: id }, tournament, function (error) {
