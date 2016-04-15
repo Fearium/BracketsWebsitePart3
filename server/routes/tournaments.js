@@ -2,9 +2,9 @@
 var express = require('express');
 var router = express.Router();
 var tournamentModel = require('../models/tournaments');
-var teamsModel = require('../models/team');
+var teamModel = require('../models/team');
 var Tournament = tournamentModel.Tournament;
-var Team = teamsModel.Team;
+var Team = teamModel.Team;
 /* Utility Function to check if user is authenticated */
 function requireAuth(req, res, next) {
     // check if the user is logged in

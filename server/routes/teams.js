@@ -32,7 +32,7 @@ router.get('/', requireAuth, function (req, res, next) {
 // GET add page - show the blank form
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('teams/add', {
-        title: 'Add a New Team',
+        title: 'Add a Team',
         userName: req.user ? req.user.userName : ''
     });
 });
@@ -120,7 +120,6 @@ router.get('/delete/:id', requireAuth, function (req, res, next) {
         }
     });
 });
-// make this public
 module.exports = router;
 
 //# sourceMappingURL=teams.js.map

@@ -4,10 +4,13 @@ var router = express.Router();
 
 // db references
 import mongoose = require('mongoose');
+
 import tournamentModel = require('../models/tournaments');
-import teamsModel = require('../models/team');
+import teamModel = require('../models/team');
+
 import Tournament = tournamentModel.Tournament;
-import Team = teamsModel.Team;
+import Team = teamModel.Team;
+
 /* Utility Function to check if user is authenticated */
 function requireAuth(req:express.Request, res:express.Response, next: any) {
     // check if the user is logged in
