@@ -39,8 +39,10 @@
                                 <div class="form-group">
                                     <input list="teams" name="team1" placeholder="1st Team" required>
                                     <datalist id="teams">
-                                <option value="teams">
-                            </datalist>
+                                        <% for (var i = 0; i < teams.length; i++) { %>
+                                        <option value="<%= teams[i].teamname %>">
+                                        <% } %>
+                                    </datalist>
 
                                     <input list="teams" name="team2" placeholder="2nd Team" required>
                                     <datalist id="teams">
