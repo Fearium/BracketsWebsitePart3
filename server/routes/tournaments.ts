@@ -5,9 +5,9 @@ var router = express.Router();
 // db references
 import mongoose = require('mongoose');
 import tournamentModel = require('../models/tournaments');
-
+import teamsModel = require('../models/team');
 import Tournament = tournamentModel.Tournament;
-
+import Team = teamsModel.Team;
 /* Utility Function to check if user is authenticated */
 function requireAuth(req:express.Request, res:express.Response, next: any) {
     // check if the user is logged in
@@ -39,10 +39,20 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
 
 // GET add page - show the blank form
 router.get('/add', requireAuth, (req: express.Request, res: express.Response, next: any) => {
-    res.render('tournaments/add', {
-        title: 'Add a New Tournament',
-        userName: req.user ? req.user.username : ''
-    });
+   Team.find((error, teams) => {
+        if (error) {
+            console.log(error);
+            res.end(error);
+        }
+        else {
+            // no error, we found a list of teams
+            res.render('tournaments/add', {
+                title: 'Add a New Tournament',
+                teams: teams,
+                userName: req.user ? req.user.userName : ''
+            });
+        }
+        });
 });
 
 // POST add page - save the new user

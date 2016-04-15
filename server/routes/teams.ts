@@ -39,20 +39,11 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
 
 // GET add page - show the blank form
 router.get('/add', requireAuth, (req: express.Request, res: express.Response, next: any) => {
-   Team.find((error, teams) => {
-        if (error) {
-            console.log(error);
-            res.end(error);
-        }
-        else {
-            // no error, we found a list of teams
+   // no error, we found a list of teams
             res.render('teams/add', {
-                title: 'Add a New Team',
-                teams: teams,
+                title: 'Add a Team',
                 userName: req.user ? req.user.userName : ''
             });
-        }
-        });
 });
 
 // POST add page - save the new team

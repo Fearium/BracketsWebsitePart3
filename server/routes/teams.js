@@ -31,19 +31,10 @@ router.get('/', requireAuth, function (req, res, next) {
 });
 // GET add page - show the blank form
 router.get('/add', requireAuth, function (req, res, next) {
-    Team.find(function (error, teams) {
-        if (error) {
-            console.log(error);
-            res.end(error);
-        }
-        else {
-            // no error, we found a list of teams
-            res.render('teams/add', {
-                title: 'Add a New Team',
-                teams: teams,
-                userName: req.user ? req.user.userName : ''
-            });
-        }
+    // no error, we found a list of teams
+    res.render('teams/add', {
+        title: 'Add a Team',
+        userName: req.user ? req.user.userName : ''
     });
 });
 // POST add page - save the new team

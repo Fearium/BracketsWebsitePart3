@@ -2,7 +2,9 @@
 var express = require('express');
 var router = express.Router();
 var tournamentModel = require('../models/tournaments');
+var teamsModel = require('../models/team');
 var Tournament = tournamentModel.Tournament;
+var Team = teamsModel.Team;
 /* Utility Function to check if user is authenticated */
 function requireAuth(req, res, next) {
     // check if the user is logged in
@@ -31,9 +33,19 @@ router.get('/', requireAuth, function (req, res, next) {
 });
 // GET add page - show the blank form
 router.get('/add', requireAuth, function (req, res, next) {
-    res.render('tournaments/add', {
-        title: 'Add a New Tournament',
-        userName: req.user ? req.user.username : ''
+    Team.find(function (error, teams) {
+        if (error) {
+            console.log(error);
+            res.end(error);
+        }
+        else {
+            // no error, we found a list of teams
+            res.render('tournaments/add', {
+                title: 'Add a New Tournament',
+                teams: teams,
+                userName: req.user ? req.user.userName : ''
+            });
+        }
     });
 });
 // POST add page - save the new user
