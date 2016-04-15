@@ -39,20 +39,11 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
 
 // GET add page - show the blank form
 router.get('/add', requireAuth, (req: express.Request, res: express.Response, next: any) => {
-   Team.find((error, teams) => {
-        if (error) {
-            console.log(error);
-            res.end(error);
-        }
-        else {
-            // no error, we found a list of teams
+           
             res.render('teams/add', {
                 title: 'Add a New Team',
-                teams: teams,
                 userName: req.user ? req.user.userName : ''
             });
-        }
-        });
 });
 
 // POST add page - save the new team
@@ -66,7 +57,7 @@ router.post('/add', requireAuth, (req: express.Request, res: express.Response, n
         player5: req.body.player5,
         player6: req.body.player6,
         createdby: req.user.username
-    }, (error, Team) => {
+    }, (error, team) => {
         // did we get back an error or valid teams object?
         if (error) {
             console.log(error);
