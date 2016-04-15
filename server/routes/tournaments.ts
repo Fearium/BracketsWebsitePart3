@@ -50,7 +50,7 @@ router.post('/add', requireAuth, (req: express.Request, res: express.Response, n
     Tournament.create({
         name: req.body.name,
         size: req.body.size,
-        team: req.body.team
+        team: Tournament.collection['TournamentInfo'].insert(req.body.team)
     }, (error, tournament) => {
         // did we get back an error or valid Users object?
         if (error) {

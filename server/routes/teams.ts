@@ -31,6 +31,7 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
             res.render('teams/index', {
                 title: 'Teams',
                 teams: teams,
+                userName: req.user ? req.user.username : ''
             });
         }
     });
@@ -40,6 +41,7 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
 router.get('/add', requireAuth, (req: express.Request, res: express.Response, next: any) => {
     res.render('teams/add', {
         title: 'Add a New Team',
+        userName: req.user ? req.user.username : ''
     });
 });
 
@@ -80,6 +82,7 @@ router.get('/:id', requireAuth, (req: express.Request, res: express.Response, ne
             res.render('team/edit', {
                 title: 'Team Details',
                 team: Team,
+                userName: req.user ? req.user.username : ''
             });
         }
     });
