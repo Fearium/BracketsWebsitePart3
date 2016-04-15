@@ -1,6 +1,5 @@
 "use strict";
 var mongoose = require('mongoose');
-var passportLocalMongoose = require('passport-local-mongoose');
 // DEFINE THE OBJECT SCHEMA
 var teamSchema = new mongoose.Schema({
     teamname: {
@@ -54,9 +53,7 @@ var teamSchema = new mongoose.Schema({
         default: Date.now
     }
 }, { collection: 'teamInfo' });
-teamSchema.plugin(passportLocalMongoose);
 // MAKE THIS PUBLIC SO THE CONTROLLER CAN SEE IT
 exports.Team = mongoose.model('Team', teamSchema);
-//# sourceMappingURL=team.js.map
 
 //# sourceMappingURL=team.js.map

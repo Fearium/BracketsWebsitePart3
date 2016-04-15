@@ -53,8 +53,6 @@ var teamSchema = new mongoose.Schema({
         default: Date.now
     }
 }, { collection: 'teamInfo' });
-teamSchema.plugin(passportLocalMongoose);
 // MAKE THIS PUBLIC SO THE CONTROLLER CAN SEE IT
 export var Team = mongoose.model('Team', teamSchema);
 
-//# sourceMappingURL=team.js.map
