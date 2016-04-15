@@ -14,10 +14,69 @@ var tournamentSchema = new mongoose.Schema({
         trim: true,
         required: 'Size of tournament required'
     },
-    teams: {
-        type: Array,
+    team1: {
+        type: String,
         trim: true,
-        required: 'Teams are required'
+    },
+    team2: {
+        type: String,
+        trim: true,
+    },
+    team3: {
+        type: String,
+        trim: true,
+    },
+    team4: {
+        type: String,
+        trim: true,
+    },
+    team5: {
+        type: String,
+        trim: true,
+    },
+    team6: {
+        type: String,
+        trim: true,
+    },
+    team7: {
+        type: String,
+        trim: true,
+    },
+    team8: {
+        type: String,
+        trim: true,
+    },
+    team9: {
+        type: String,
+        trim: true,
+    },
+    team10: {
+        type: String,
+        trim: true,
+    },
+    team11: {
+        type: String,
+        trim: true,
+    },
+    team12: {
+        type: String,
+        trim: true,
+    },
+    team13: {
+        type: String,
+        trim: true,
+    },
+    team14: {
+        type: String,
+        trim: true,
+    },
+    team15: {
+        type: String,
+        trim: true,
+    },
+    team16: {
+        type: String,
+        trim: true,
     },
     description: {
         type: String,

@@ -31,7 +31,7 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
             res.render('teams/index', {
                 title: 'Teams',
                 teams: teams,
-                userName: req.user ? req.user.username : ''
+                userName: req.user ? req.user.userName : ''
             });
         }
     });
@@ -41,7 +41,7 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
 router.get('/add', requireAuth, (req: express.Request, res: express.Response, next: any) => {
     res.render('teams/add', {
         title: 'Add a New Team',
-        userName: req.user ? req.user.username : ''
+        userName: req.user ? req.user.userName : ''
     });
 });
 
@@ -55,6 +55,7 @@ router.post('/add', requireAuth, (req: express.Request, res: express.Response, n
         player4: req.body.player4,
         player5: req.body.player5,
         player6: req.body.player6,
+        userName: req.body.userName
     }, (error, Team) => {
         // did we get back an error or valid teams object?
         if (error) {
@@ -82,7 +83,7 @@ router.get('/:id', requireAuth, (req: express.Request, res: express.Response, ne
             res.render('team/edit', {
                 title: 'Team Details',
                 team: Team,
-                userName: req.user ? req.user.username : ''
+                userName: req.user ? req.user.userName : ''
             });
         }
     });
@@ -104,6 +105,7 @@ router.post('/:id', requireAuth, (req: express.Request, res: express.Response, n
         player4: req.body.player4,
         player5: req.body.player5,
         player6: req.body.player6,
+        userName: req.body.userName
     });
     
     
