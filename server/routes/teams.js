@@ -24,7 +24,7 @@ router.get('/', requireAuth, function (req, res, next) {
             res.render('teams/index', {
                 title: 'Teams',
                 teams: teams,
-                userName: req.user ? req.user.username : ''
+                userName: req.user ? req.user.userName : ''
             });
         }
     });
@@ -33,7 +33,7 @@ router.get('/', requireAuth, function (req, res, next) {
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('teams/add', {
         title: 'Add a New Team',
-        userName: req.user ? req.user.username : ''
+        userName: req.user ? req.user.userName : ''
     });
 });
 // POST add page - save the new team
@@ -46,6 +46,7 @@ router.post('/add', requireAuth, function (req, res, next) {
         player4: req.body.player4,
         player5: req.body.player5,
         player6: req.body.player6,
+        userName: req.body.userName
     }, function (error, Team) {
         // did we get back an error or valid teams object?
         if (error) {
@@ -70,7 +71,7 @@ router.get('/:id', requireAuth, function (req, res, next) {
             res.render('team/edit', {
                 title: 'Team Details',
                 team: Team,
-                userName: req.user ? req.user.username : ''
+                userName: req.user ? req.user.userName : ''
             });
         }
     });
@@ -89,6 +90,7 @@ router.post('/:id', requireAuth, function (req, res, next) {
         player4: req.body.player4,
         player5: req.body.player5,
         player6: req.body.player6,
+        userName: req.body.userName
     });
     // run the update using mongoose and our model
     Team.update({ _id: id }, team, function (error) {

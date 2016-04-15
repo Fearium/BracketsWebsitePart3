@@ -1,25 +1,33 @@
 <% include ../partials/header.ejs %>
 <% include ../partials/navbar.ejs %>
 <main class="container">
-    <h1>Users</h1>
+    <h1>Teams</h1>
 
-    <a href="/users/add">Add a New User</a>
+    <a href="/teams/add">Add a New Team</a>
 
     <ul class="list-group">
-        <% for (var i = 0; i < users.length; i++) { %>
+        <% for (var i = 0; i < teams.length; i++) { %>
             <li class="list-group-item">
-                username: 
-                <a href="/users/<%= users[i]._id %>" title="Edit User">
-                    <%= users[i].username %>
+                teamname: 
+                <a href="/teams/<%= teams[i]._id %>" title="Edit Team">
+                    <%= teams[i].teamname %>
                 </a>
                 <br />
-                password: <%= users[i].password %>
+                player1: <%= teams[i].player1 %>
                 <br />
-                email: <%= users[i].email %>
+                player2: <%= teams[i].player2 %>
                 <br />
-                Created: <%= users[i].created.toDateString() %>
+                player3: <%= teams[i].player3 %>
                 <br />
-                Updated: <%= users[i].updated.toDateString() %>
+                player4: <%= teams[i].player4 %>
+                <br />
+                player5: <%= teams[i].player5 %>
+                <br />
+                player6: <%= teams[i].player6 %>
+                <br />
+                Created: <%= teams[i].created.toDateString() %>
+                <br />
+                Updated: <%= teams[i].updated.toDateString() %>
             </li>
         <% } %>
     </ul>
