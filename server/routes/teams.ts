@@ -52,6 +52,7 @@ router.get('/add', requireAuth, (req: express.Request, res: express.Response, ne
                 userName: req.user ? req.user.userName : ''
             });
         }
+        });
 });
 
 // POST add page - save the new team
