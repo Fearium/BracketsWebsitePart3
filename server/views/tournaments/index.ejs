@@ -6,55 +6,48 @@
     <a href="/tournaments/add">Add a New Tournament</a>
 
     <ul class="list-group">
-        <% for (var i = 0; i < tournaments.Length; i++) { %>
+        <% for (var i = 0; i < tournaments.length; i++) { %>
             <li class="list-group-item">
-                Name: 
+                name: 
                 <a href="/tournaments/<%= tournaments[i]._id %>" title="Edit Tournament">
                     <%= tournaments[i].name %>
                 </a>
                 <br />
-                size: <%= tournaments[i].size %>
+                team1: <%= tournaments[i].team1 %>
                 <br />
-                Description: <%= tournaments[i].description %>
+                team2: <%= tournaments[i].team2 %>
                 <br />
-                "Team 1:" <%= tournaments[i].team1 %>
+                team3: <%= tournaments[i].team3 %>
                 <br />
-                "Team 2:" <%= tournaments[i].team2 %>
+                team4: <%= tournaments[i].team4 %>
                 <br />
-                "Team 3:" <%= tournaments[i].team3 %>
+                team5: <%= tournaments[i].team5 %>
                 <br />
-                "Team 4:" <%= tournaments[i].team4 %>
+                team6: <%= tournaments[i].team6 %>
                 <br />
-                "Team 5:" <%= tournaments[i].team5 %>
+                team7: <%= tournaments[i].team7 %>
                 <br />
-                "Team 6:" <%= tournaments[i].team6 %>
+                team8: <%= tournaments[i].team8 %>
                 <br />
-                "Team 7:" <%= tournaments[i].team7 %>
+                team9: <%= tournaments[i].team9 %>
                 <br />
-                "Team 8:" <%= tournaments[i].team8 %>
+                team10: <%= tournaments[i].team10 %>
                 <br />
-                "Team 9:" <%= tournaments[i].team9 %>
+                team11: <%= tournaments[i].team11 %>
                 <br />
-                "Team 10:" <%= tournaments[i].team10 %>
+                team12: <%= tournaments[i].team12 %>
                 <br />
-                "Team 11:" <%= tournaments[i].team11 %>
+                team13: <%= tournaments[i].team13 %>
                 <br />
-                "Team 12:" <%= tournaments[i].team12 %>
+                team14: <%= tournaments[i].team14 %>
                 <br />
-                "Team 13:" <%= tournaments[i].team13 %>
+                team15: <%= tournaments[i].team15 %>
                 <br />
-                "Team 14:" <%= tournaments[i].team14 %>
+                team16: <%= tournaments[i].team16 %>
                 <br />
-                "Team 15:" <%= tournaments[i].team15 %>
+                Created: <%= tournaments[i].created.toDateString() %>
                 <br />
-                "Team 16:" <%= tournaments[i].team16 %>
-                <br />
-                "Created By:" <%= tournaments[i].createdby %>
-                <br />
-                "Created:" <%= tournaments[i].created.toDateString() %>
-                <br />
-                "Updated:" <%= tournaments[i].updated.toDateString() %>
-                
+                Updated: <%= tournaments[i].updated.toDateString() %>
             </li>
         <% } %>
     </ul>
