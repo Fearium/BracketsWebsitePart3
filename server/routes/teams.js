@@ -31,96 +31,106 @@ router.get('/', requireAuth, function (req, res, next) {
 });
 // GET add page - show the blank form
 router.get('/add', requireAuth, function (req, res, next) {
-    res.render('teams/add', {
-        title: 'Add a New Team',
-        userName: req.user ? req.user.userName : ''
-    });
-});
-// POST add page - save the new team
-router.post('/add', requireAuth, function (req, res, next) {
-    Team.create({
-        teamname: req.body.teamname,
-        player1: req.body.player1,
-        player2: req.body.player2,
-        player3: req.body.player3,
-        player4: req.body.player4,
-        player5: req.body.player5,
-        player6: req.body.player6,
-        userName: req.body.userName
-    }, function (error, Team) {
-        // did we get back an error or valid teams object?
+    Team.find(function (error, teams) {
         if (error) {
             console.log(error);
             res.end(error);
         }
         else {
-            res.redirect('/teams');
-        }
-    });
-});
-// GET edit page - show the current team in the form
-router.get('/:id', requireAuth, function (req, res, next) {
-    var id = req.params.id;
-    Team.findById(id, function (error, Team) {
-        if (error) {
-            console.log(error);
-            res.end(error);
-        }
-        else {
-            //show the edit view
-            res.render('team/edit', {
-                title: 'Team Details',
-                team: Team,
+            // no error, we found a list of teams
+            res.render('teams/add', {
+                title: 'Add a New Team',
+                teams: teams,
                 userName: req.user ? req.user.userName : ''
             });
         }
     });
-});
-// POST edit page - update the selected team
-router.post('/:id', requireAuth, function (req, res, next) {
-    // grab the id from the url parameter
-    var id = req.params.id;
-    // create and populate a team object
-    var team = new Team({
-        _id: id,
-        teamname: req.body.teamname,
-        player1: req.body.player1,
-        player2: req.body.player2,
-        player3: req.body.player3,
-        player4: req.body.player4,
-        player5: req.body.player5,
-        player6: req.body.player6,
-        userName: req.body.userName
+    // POST add page - save the new team
+    router.post('/add', requireAuth, function (req, res, next) {
+        Team.create({
+            teamname: req.body.teamname,
+            player1: req.body.player1,
+            player2: req.body.player2,
+            player3: req.body.player3,
+            player4: req.body.player4,
+            player5: req.body.player5,
+            player6: req.body.player6,
+            createdby: req.user.username
+        }, function (error, Team) {
+            // did we get back an error or valid teams object?
+            if (error) {
+                console.log(error);
+                res.end(error);
+            }
+            else {
+                res.redirect('/teams');
+            }
+        });
     });
-    // run the update using mongoose and our model
-    Team.update({ _id: id }, team, function (error) {
-        if (error) {
-            console.log(error);
-            res.end(error);
-        }
-        else {
-            // if update is successful redirect to the teams page
-            res.redirect('/teams');
-        }
+    // GET edit page - show the current team in the form
+    router.get('/:id', requireAuth, function (req, res, next) {
+        var id = req.params.id;
+        Team.findById(id, function (error, Team) {
+            if (error) {
+                console.log(error);
+                res.end(error);
+            }
+            else {
+                //show the edit view
+                res.render('team/edit', {
+                    title: 'Team Details',
+                    team: Team,
+                    userName: req.user ? req.user.userName : ''
+                });
+            }
+        });
     });
-});
-// GET delete team
-router.get('/delete/:id', requireAuth, function (req, res, next) {
-    // get the id from the url
-    var id = req.params.id;
-    // use the model and delete this record
-    Team.remove({ _id: id }, function (error) {
-        if (error) {
-            console.log(error);
-            res.end(error);
-        }
-        else {
-            // if removal worked redirect to teams page
-            res.redirect('/teams');
-        }
+    // POST edit page - update the selected team
+    router.post('/:id', requireAuth, function (req, res, next) {
+        // grab the id from the url parameter
+        var id = req.params.id;
+        // create and populate a team object
+        var team = new Team({
+            _id: id,
+            teamname: req.body.teamname,
+            player1: req.body.player1,
+            player2: req.body.player2,
+            player3: req.body.player3,
+            player4: req.body.player4,
+            player5: req.body.player5,
+            player6: req.body.player6,
+            userName: req.body.userName
+        });
+        // run the update using mongoose and our model
+        Team.update({ _id: id }, team, function (error) {
+            if (error) {
+                console.log(error);
+                res.end(error);
+            }
+            else {
+                // if update is successful redirect to the teams page
+                res.redirect('/teams');
+            }
+        });
     });
+    // GET delete team
+    router.get('/delete/:id', requireAuth, function (req, res, next) {
+        // get the id from the url
+        var id = req.params.id;
+        // use the model and delete this record
+        Team.remove({ _id: id }, function (error) {
+            if (error) {
+                console.log(error);
+                res.end(error);
+            }
+            else {
+                // if removal worked redirect to teams page
+                res.redirect('/teams');
+            }
+        });
+    });
+    // make this public
+    module.exports = router;
 });
-// make this public
-module.exports = router;
 
 //# sourceMappingURL=teams.js.map
