@@ -24,7 +24,7 @@ router.get('/', requireAuth, function (req, res, next) {
             res.render('teams/index', {
                 title: 'Teams',
                 teams: teams,
-                userName: req.user ? req.user.userName : ''
+                userName: req.user ? req.user.username : ''
             });
         }
     });
@@ -33,7 +33,7 @@ router.get('/', requireAuth, function (req, res, next) {
 router.get('/add', requireAuth, function (req, res, next) {
     res.render('teams/add', {
         title: 'Add a Team',
-        userName: req.user ? req.user.userName : ''
+        userName: req.user ? req.user.username : ''
     });
 });
 // POST add page - save the new team
@@ -71,7 +71,7 @@ router.get('/:id', requireAuth, function (req, res, next) {
             res.render('team/edit', {
                 title: 'Team Details',
                 team: Team,
-                userName: req.user ? req.user.userName : ''
+                userName: req.user ? req.user.username : ''
             });
         }
     });

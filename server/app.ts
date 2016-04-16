@@ -33,7 +33,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var tournaments = require('./routes/tournaments');
-
+var bracket = require('./routes/brackets');
 var teams = require('./routes/teams');
 
 
@@ -73,9 +73,8 @@ passport.deserializeUser(User.deserializeUser());
 // Route Definitions
 app.use('/', routes);
 app.use('/users', users);
-
+app.use('/brackets', bracket);
 app.use('/tournaments', tournaments);
-
 app.use('/teams', teams);
 
 
