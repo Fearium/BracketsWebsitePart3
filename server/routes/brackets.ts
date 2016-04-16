@@ -40,3 +40,6 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
         }
     });
 });
+
+// make this public
+module.exports = router;
