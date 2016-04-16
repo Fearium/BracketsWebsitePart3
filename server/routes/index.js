@@ -20,12 +20,6 @@ router.get('/', function (req, res, next) {
         title: 'Landing Page',
         userName: req.user ? req.user.username : '' });
 });
-/* GET product page. */
-router.get('/brackets', function (req, res, next) {
-    res.render('index', {
-        title: 'Brackets',
-        userName: req.user ? req.user.username : '' });
-});
 /* GET about page. */
 router.get('/about', function (req, res, next) {
     res.render('index', {
