@@ -15,6 +15,7 @@ var tournamentSchema = new mongoose.Schema({
         trim: true,
         required: 'Size of tournament required'
     },
+    //16 team variables
     team1: {
         type: String,
         trim: true,
@@ -76,6 +77,74 @@ var tournamentSchema = new mongoose.Schema({
         trim: true,
     },
     team16: {
+        type: String,
+        trim: true,
+    },
+    //tournament round 1 progression values
+    round1a: {
+        type: String,
+        trim: true,
+    },
+    round1b: {
+        type: String,
+        trim: true,
+    },
+    round1c: {
+        type: String,
+        trim: true,
+    },
+    round1d: {
+        type: String,
+        trim: true,
+    },
+    round1e: {
+        type: String,
+        trim: true,
+    },
+    round1f: {
+        type: String,
+        trim: true,
+    },
+    round1g: {
+        type: String,
+        trim: true,
+    },
+    round1h: {
+        type: String,
+        trim: true,
+    },
+    //tournament round 2 progression values
+    round2a: {
+        type: String,
+        trim: true,
+    },
+    round2b: {
+        type: String,
+        trim: true,
+    },
+    round2c: {
+        type: String,
+        trim: true,
+    },
+    round2d: {
+        type: String,
+        trim: true,
+    },
+    //tournament round 3 progression values
+    round3a: {
+        type: String,
+        trim: true,
+    },
+    round3b: {
+        type: String,
+        trim: true,
+    },
+    //tournament round 3 progression values
+    round4a: {
+        type: String,
+        trim: true,
+    },
+    round4b: {
         type: String,
         trim: true,
     },
