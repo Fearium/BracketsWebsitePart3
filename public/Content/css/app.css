@@ -20,7 +20,7 @@ min-height:75px !important;
 }
 .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
 color: #ffffff;
-background-color:transparent;
+background-color:#F04408;
 }
 .navbar-custom .navbar-brand {
 color:#ffffff;
