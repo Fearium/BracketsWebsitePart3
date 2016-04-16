@@ -30,5 +30,7 @@ router.get('/', requireAuth, function (req, res, next) {
         }
     });
 });
+// make this public
+module.exports = router;
 
 //# sourceMappingURL=brackets.js.map
