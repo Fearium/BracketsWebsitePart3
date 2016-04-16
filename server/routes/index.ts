@@ -23,12 +23,6 @@ router.get('/', (req: express.Request, res: express.Response, next: any) => {
         userName: req.user ? req.user.username : '' });
 });
 
-/* GET product page. */
-router.get('/brackets', (req: express.Request, res: express.Response, next: any) => {
-    res.render('index', { 
-        title: 'Brackets',
-        userName: req.user ? req.user.username : ''});
-});
 
 /* GET about page. */
 router.get('/about', (req: express.Request, res: express.Response, next: any) => {
