@@ -32,7 +32,7 @@ router.get('/', requireAuth, (req: express.Request, res: express.Response, next:
         else {
             // no error, we found a list of users
             res.render('tournaments/index', {
-                title: 'My Tournaments',
+                title: 'Tournaments',
                 tournaments: tournaments,
                 userName: req.user ? req.user.username : ''
             });

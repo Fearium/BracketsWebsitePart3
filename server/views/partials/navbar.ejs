@@ -15,40 +15,34 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">    
       <ul class="nav navbar-nav navbar-right">
       
-        <% if(title === "Landing Page") { %>  
+        <% if(title == "Tournaments") { %>  
             <% if(userName && userName != "admin") { %>
-                    <li><a href="/tournaments">My Tournaments</a></li>
-                    <li><a href="/tournaments">Created Tournaments</a></li>
+                    <li class="active"><a href="/tournaments">Manage Tournaments</a></li>
+                    <li><a href="/teams">Manage Teams</a></li>
             <% } if(userName == "admin") {%>
-                    <li><a href="/brackets">Brackets</a></li>
+                    <li><a href="/tournaments">Tournaments</a></li>
+                    <li><a href="/teams">Teams</a></li>
+                    <li><a href="/users">Users</a></li>
+        
+        <% } } else if(title == "Teams") { %>
+             <% if(userName && userName != "admin") { %>
+                    <li><a href="/tournaments">Manage Tournaments</a></li>
+                    <li class="active"><a href="/teams">Manage Teams</a></li>
+            <% } if(userName == "admin") {%>
+                    <li><a href="/tournaments">Tournaments</a></li>
+                    <li><a href="/teams">Teams</a></li>
                     <li><a href="/users">Users</a></li>
                     
-            <% } } else if(title == "My Tournaments") { %>
-            <% if(userName && userName != "admin") { %>
-             <li class="active"><a href="/tournaments">My Tournaments</a></li>
-             <li><a href="/tournaments">Created Tournaments</a></li>
-             <% } if(userName == "admin") {%>
-                    <li><a href="/brackets">Brackets</a></li>
-                    <li><a href="/users">Users</a></li>
-                    
-            <% } } else if(title == "Created Tournaments") { %>
-            <% if(userName && userName != "admin") { %>
-             <li><a href="/tournaments">My Tournaments</a></li>
-             <li class="active"><a href="/tournaments">Created Tournaments</a></li>
-             <% } if(userName == "admin") {%>
-                    <li><a href="/brackets">Brackets</a></li>
-                    <li><a href="/users">Users</a></li>
-                    
-        <% } } else if(title == "Brackets" && userName == "admin") { %>
-                    <li><a href="/brackets">Brackets</a></li>
+         <% } } else { %>
+                    <% if(userName && userName != "admin") { %>
+                    <li><a href="/tournaments">Manage Tournaments</a></li>
+                    <li><a href="/teams">Manage Teams</a></li>
+            <% } if(userName == "admin") {%>
+                    <li><a href="/tournaments">Tournaments</a></li>
+                    <li><a href="/teams">Teams</a></li>
                     <li><a href="/users">Users</a></li>
             
-        <%  } else if(title == "Users" && userName == "admin") { %>
-                    <li><a href="/brackets">Brackets</a></li>
-                    <li><a href="/users">Users</a></li>
-            <%  } %>
-            
-         <% if(userName) { %>
+         <% }} if(userName) { %>
             <li class="navbar-text"><i class="fa fa-user"></i> Welcome, <%= userName %></li>
             <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
          <% } else { %>
