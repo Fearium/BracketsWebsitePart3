@@ -6,6 +6,8 @@ var router = express.Router();
 // db references
 var userModel = require('../models/user');
 var User = userModel.User;
+var tournamentModel = require('../models/tournaments');
+var Tournament = tournamentModel.Tournament;
 /* Utility Function to check if user is authenticated */
 function requireAuth(req, res, next) {
     // check if the user is logged in
@@ -16,9 +18,20 @@ function requireAuth(req, res, next) {
 }
 /* GET landing page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {
-        title: 'Landing Page',
-        userName: req.user ? req.user.username : '' });
+    Tournament.find(function (error, tournaments) {
+        if (error) {
+            console.log(error);
+            res.end(error);
+        }
+        else {
+            // no error, we found a list of users
+            res.render('index', {
+                title: 'Landing Page',
+                tournaments: tournaments,
+                userName: req.user ? req.user.username : ''
+            });
+        }
+    });
 });
 /* GET about page. */
 router.get('/about', function (req, res, next) {

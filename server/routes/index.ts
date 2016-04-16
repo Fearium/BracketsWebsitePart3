@@ -7,6 +7,9 @@ var router = express.Router();
 import userModel = require('../models/user');
 import User = userModel.User;
 
+import tournamentModel = require('../models/tournaments');
+import Tournament = tournamentModel.Tournament;
+
 /* Utility Function to check if user is authenticated */
 function requireAuth(req:express.Request, res:express.Response, next: any) {
     // check if the user is logged in
@@ -18,9 +21,21 @@ function requireAuth(req:express.Request, res:express.Response, next: any) {
 
 /* GET landing page. */
 router.get('/', (req: express.Request, res: express.Response, next: any) => {
-    res.render('index', { 
-        title: 'Landing Page', 
-        userName: req.user ? req.user.username : '' });
+   
+   Tournament.find((error, tournaments) => {
+        if (error) {
+            console.log(error);
+            res.end(error);
+        }
+        else {
+            // no error, we found a list of users
+            res.render('index', {
+                title: 'Landing Page',
+                tournaments: tournaments,
+                userName: req.user ? req.user.username : ''
+            });
+        }
+    });
 });
 
 
