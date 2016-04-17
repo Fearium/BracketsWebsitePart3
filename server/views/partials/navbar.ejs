@@ -45,19 +45,20 @@
          <% }} if(userName) { %>
          
             <li><i class="fa fa-user"></i> logged in as 
-            <div class="user_dropdown_list"><a href="/"><%= userName %></a>
+            <div class="user_dropdown_list">
+              <a href="/"><%= userName %></a>
             <div class="user_dropdown_options">
               <ul>
                 <li>
-                <a href="/">edit</a>
+                <a href="/"><i class="fa fa-pencil-square-o" aria-hidden="true"> Edit</a></i>
                 </li>
                 <li>
                 <a href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
                 </li>
               </ul>
             </div>
+            </div>
             </li>
-         </div>
          <% } else { %>
             <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
          <% } %>

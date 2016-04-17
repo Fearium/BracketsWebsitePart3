@@ -9,16 +9,19 @@ html,body{
 background-color:#682EFF;
 color:#ffffff;
 border-radius:0;
-min-height:75px !important;
 padding: 0px;
 margin: 0px;
+min-height:75px !important;
 }
 .navbar-custom .navbar-nav > li > a {
 color:#ffffff;
 font-size: 170%;
-min-height:75px !important;
+height: 75px;
+padding-top: 26px;
+padding-right: 7px;
+padding-left: 7px;
 }
-.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus, .user_dropdown_list a {
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
 color: #ffffff;
 background-color:#F04408;
 }
@@ -37,6 +40,7 @@ min-height:70px !important;
 .user_dropdown_list{
     position: relative;
     display: inline-block;
+    padding-top: 17px;
 }
 .user_dropdown_list a{
     color:#ffffff;
@@ -45,14 +49,24 @@ min-height:70px !important;
 .user_dropdown_options{
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #682EFF;
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 1px 3px;
     z-index: 1;
+    font-size: 80%;
 }
+.user_dropdown_options ul{
+    padding: 5px;
+    list-style: none;
+}
+.user_dropdown_options a:hover, .user_dropdown_list a:hover{
+    text-decoration: none !important;
+}
+
 .user_dropdown_list:hover .user_dropdown_options {
     display: block;
+    
 }
 
 /* ToDo OLD */
