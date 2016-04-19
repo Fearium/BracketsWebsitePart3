@@ -18,8 +18,10 @@ color:#ffffff;
 font-size: 170%;
 height: 75px;
 padding-top: 26px;
-padding-right: 7px;
-padding-left: 7px;
+padding-right: 10px;
+padding-left: 10px;
+margin-right: 10px;
+margin-left: 0px;
 }
 .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
 color: #ffffff;
@@ -176,7 +178,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 150px;
 }
 .footer {
   position: absolute;
