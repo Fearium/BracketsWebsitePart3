@@ -1,52 +1,201 @@
 <% include ../partials/header.ejs %>
-<% include ../partials/navbar.ejs %>
-<main class="container-fluid">
+    <% include ../partials/navbar.ejs %>
+        <main class="container">
             <div class="row">
-                <div class="col-md-offset-3 col-md-6">
-                    <h1>Create a Tournament</h1>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-offset-5">
+                            <!-- Dynamic title (name) pulled from DB using tournament unique ID -->
+                            <h1>Tournament Title</h1>
+                        </div>
+                    </div>
                     <form method="post">
 
-                        <!-- Team Name -->
-                        <fieldset class="form-group">
-                            <label for="name">Team Name: *</label>
-                            <input type="text" name="teamname" class="form-control" required />
-                        </fieldset>
-
-
-                                <!-- Team Member Name List -->
-                               <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" name="player1" class="form-control" placeholder="Member Name" required/>
-                                        <span class="input-group-addon">-</span>
-                                        <input type="text" name="player2" class="form-control" placeholder="Member Name" required/>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
                                     </div>
                                 </div>
-                                
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" name="player3" class="form-control" placeholder="Member Name" required/>
-                                        <span class="input-group-addon">-</span>
-                                        <input type="text" name="player4" class="form-control" placeholder="Member Name" required/>
+                            </div>
+                            <div class="col-md-offset-8 col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
                                     </div>
                                 </div>
-                                
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" name="player5" class="form-control" placeholder="Member Name" required/>
-                                        <span class="input-group-addon">-</span>
-                                        <input type="text" name="player6" class="form-control" placeholder="Member Name" required/>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            
+                            <!-- <div id="vertical_line" class="col-md-offset-1 col-md-1"></div> -->
+                            
+                            <div class="col-md-offset-2 col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-offset-4 col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-offset-8 col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 
-                        <fieldset class="form-group text-right">
-                            <button type="submit" class="btn btn-success">Submit</button>
-                            <a href="/brackets">
-                                <input type="button" class="btn btn-warning" value="Cancel" />
-                            </a>
-                        </fieldset>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-offset-8 col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-offset-4 col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-offset-8 col-md-2">
+                                <div id="bracket">
+                                    <div id="top">
+                                        <h2>test</h2>
+                                    </div>
+                                    <div id="middle">
+                                        <h4>VS</h4>
+                                    </div>
+                                    <div id="bottom">
+                                        <h2>test</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
                     </form>
                 </div>
-            </div>  
-</main>
-<% include ../partials/bootstrap.ejs %>
-<% include ../partials/footer.ejs %>
+            </div>
+        </main>
+        <% include ../partials/bootstrap.ejs %>
+            <% include ../partials/footer.ejs %>

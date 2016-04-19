@@ -196,3 +196,20 @@ body {
 #footer_container{
     border-top: 1px #09C5E0 solid;
 }
+
+/* Brackets */
+
+#bracket, #top, #middle, #bottom, #bracket h2, #bracket h4{
+    padding: 0px;
+    margin: 0px;
+}
+#bracket{
+    border: 2px #682EFF solid;
+    border-radius: 30px;
+}
+#vertical_line{
+    border: 2px #682EFF solid;
+    height: 90px;
+    width: 2px;
+    display: inline-block;
+}
